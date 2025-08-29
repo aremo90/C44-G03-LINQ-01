@@ -239,6 +239,62 @@ namespace ConsoleApp1
             #endregion
 
             #endregion
+            #region Ordering Operators
+
+            #region get products order by Price ASC
+
+            //// fluet syntax
+            //var result = ListGenerator.ProductList.OrderBy(p => p.UnitPrice);
+
+            //// Query Syntax
+            //result = from P in ListGenerator.ProductList
+            //         orderby P.UnitPrice ascending
+            //         select P;
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region get products order by price desc
+
+            //var result = ListGenerator.ProductList.OrderByDescending(p => p.UnitPrice);
+
+
+            //// Query Syntax
+            //result = from P in ListGenerator.ProductList
+            //         orderby P.UnitPrice descending
+            //         select P;
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region Get products order by Price Asc And number of Items in stock
+
+
+            var result = ListGenerator.ProductList.OrderBy(p => p.UnitPrice).ThenBy(p => p.UnitsInStock);
+
+
+            // Query Syntax
+            result = from P in ListGenerator.ProductList
+                     orderby P.UnitPrice , P.UnitsInStock
+                     select P;
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+
+            #endregion
+
+            #endregion
 
         }
     }
