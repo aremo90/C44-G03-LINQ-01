@@ -386,7 +386,7 @@ namespace ConsoleApp1
             //===================================================
             //Single() || SingleOrDefault()
             //var result = ListGenerator.ProductList.Single(); // will trhw exception if more than one element in the list
-                                                               // but we can add condtion to avoid this like (p => p.ProductID == 10)
+            // but we can add condtion to avoid this like (p => p.ProductID == 10)
             //var result = ListGenerator.ProductList.SingleOrDefault(p => p.ProductID == 1000);
 
             //Console.WriteLine(result);
@@ -397,6 +397,39 @@ namespace ConsoleApp1
 
             //foreach (var item in result)
             //    Console.WriteLine(item);
+            #endregion
+
+            #region Aggregation Operators
+
+            // Count() || Sum() || Min() || Max() || Average()
+
+            //var result = ListGenerator.ProductList.Count();
+            //var result = ListGenerator.ProductList.Count(p => p.UnitsInStock ==0 );
+            //Console.WriteLine(result); // 77
+
+            //===================================================
+            //===================================================
+
+            //var result = ListGenerator.ProductList.Max();
+            //var result = ListGenerator.ProductList.Min();
+            //var result = ListGenerator.ProductList.Min( p => p.UnitPrice);
+            //Console.WriteLine(result);
+
+            //===================================================
+            //===================================================
+
+            //var result = ListGenerator.ProductList.Sum(p => p.UnitPrice);
+            //var result = ListGenerator.ProductList.Average(p => p.UnitPrice);
+            //Console.WriteLine(result);
+
+            //===================================================
+            //===================================================
+
+            string[] Names = {"Hamza" , "Omar" , "Ahmed"};
+            var result = Names.Aggregate((a, b) => a + " " + b);
+
+            Console.WriteLine(result);
+
             #endregion
         }
     }
