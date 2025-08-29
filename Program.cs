@@ -43,14 +43,51 @@
 
             // Method Revese number 
 
-            int x = 1234567;
+            //int x = 1234567;
 
             //Console.WriteLine(intgerExtention.Revese(x));
 
-            int y = x.Revese(); // Extention method
-            Console.WriteLine(y);
+            //int y = x.Revese(); // Extention method
+            //Console.WriteLine(y);
 
             #endregion
+
+
+            #region annonymous type
+
+            //Employee emp = new Employee();
+            //emp.Id = 101;
+            //emp.Name = "John";
+            //emp.Salary = 45000;
+
+            //object emp01 = new
+            //{
+            //    Id = 101,
+            //    Name = "John",
+            //    Salary = 45000
+            //};
+
+
+            // annonymous type
+
+            var emp02 = new { Id = 10, Name = "Ahmed", Salary = 5000 };
+            Console.WriteLine(emp02.Name);
+            Console.WriteLine(emp02.GetType().Name);
+
+            var emp03 = new { Id = emp02.Id, Name = emp02.Name, Salary = 100000 };
+            Console.WriteLine(emp03.GetType().Name);
+
+
+
+            var emp04 = new { Id = 10, Name = "Ahmed", Salary = 5000 , age = 20};
+            Console.WriteLine(emp04.GetType().Name);
+
+            var emp05 = new { ID = emp02.Id, Name = emp02.Name, Salary = 100000 };
+            Console.WriteLine(emp05.GetType().Name);
+
+            #endregion
+
+
         }
     }
 }
