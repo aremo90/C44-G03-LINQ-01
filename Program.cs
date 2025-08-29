@@ -188,8 +188,55 @@ namespace ConsoleApp1
             #endregion
             #region Data Setup
 
-            Console.WriteLine(ListGenerator.ProductList[0]);
-            Console.WriteLine(ListGenerator.CustomerList[0]);
+            //Console.WriteLine(ListGenerator.ProductList[0]);
+            //Console.WriteLine(ListGenerator.CustomerList[0]);
+
+            #endregion
+            #region Filtertaion Operators
+
+            // Where operator
+            // Deferrd execution
+
+            #region Get element out of stock
+            ////Fluet Syntax
+            //var result = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0);
+
+            ////Query Syntax
+            //result = from P in ListGenerator.ProductList
+            //         where P.UnitsInStock == 0
+            //         select P;
+
+            //foreach (var item in result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region element in stock and in category of meat
+
+            //var result = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0 && p.Category == "Meat/Poultry");
+
+            ////Query Syntax
+            //result = from P in ListGenerator.ProductList
+            //         where P.UnitsInStock > 0 && P.Category == "Meat/Poultry"
+            //         select P;
+
+
+            //foreach (var item in result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region get from first 10 product that are out of stock
+
+
+            // indexed Where
+            // vaild only with fluet syntax
+            //var result = ListGenerator.ProductList.Where((P , I) => P.UnitsInStock == 0 && I < 10);
+
+
+            //foreach (var item in result)
+            //    Console.WriteLine(item);
+            #endregion
 
             #endregion
 
