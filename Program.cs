@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            #region LINQ - Restriction Operators
+
+
+
+            #endregion
+
         }
     }
 }
