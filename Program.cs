@@ -70,20 +70,50 @@
 
             // annonymous type
 
-            var emp02 = new { Id = 10, Name = "Ahmed", Salary = 5000 };
-            Console.WriteLine(emp02.Name);
-            Console.WriteLine(emp02.GetType().Name);
+            //var emp02 = new { Id = 10, Name = "Ahmed", Salary = 5000 };
+            //Console.WriteLine(emp02.Name);
+            //Console.WriteLine(emp02.GetType().Name);
 
-            var emp03 = new { Id = emp02.Id, Name = emp02.Name, Salary = 100000 };
-            Console.WriteLine(emp03.GetType().Name);
+            //var emp03 = new { Id = emp02.Id, Name = emp02.Name, Salary = 100000 };
+            //Console.WriteLine(emp03.GetType().Name);
 
 
 
-            var emp04 = new { Id = 10, Name = "Ahmed", Salary = 5000 , age = 20};
-            Console.WriteLine(emp04.GetType().Name);
+            //var emp04 = new { Id = 10, Name = "Ahmed", Salary = 5000 , age = 20};
+            //Console.WriteLine(emp04.GetType().Name);
 
-            var emp05 = new { ID = emp02.Id, Name = emp02.Name, Salary = 100000 };
-            Console.WriteLine(emp05.GetType().Name);
+            //var emp05 = new { ID = emp02.Id, Name = emp02.Name, Salary = 100000 };
+            //Console.WriteLine(emp05.GetType().Name);
+
+            #endregion
+
+            #region What is LinQ
+
+            // LinQ = Language Integrated Query
+
+            // - 40+ operators
+
+            // Dql = Data Query Language +> sql server
+
+            // Linq is set of operators
+
+            // extension methods exits in interface IEnumerable<T>
+
+            // all implemention of these method in class Enumerable
+
+            // LinQ Operators dived into 13 categories
+
+            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            // Odd Numbers Number %2 == 1
+            // Where()
+
+            List<int> OddNumbers = Numbers.Where(N => N % 2 == 0).ToList();
+            
+            foreach (var item in OddNumbers)
+                Console.WriteLine(item);
+
+
 
             #endregion
 
