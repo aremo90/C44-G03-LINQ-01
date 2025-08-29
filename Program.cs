@@ -38,7 +38,6 @@
             //Console.WriteLine(age);
             #endregion
             #endregion
-
             #region extenition method
 
             // Method Revese number 
@@ -51,8 +50,6 @@
             //Console.WriteLine(y);
 
             #endregion
-
-
             #region annonymous type
 
             //Employee emp = new Employee();
@@ -86,7 +83,6 @@
             //Console.WriteLine(emp05.GetType().Name);
 
             #endregion
-
             #region What is LinQ
 
             // LinQ = Language Integrated Query
@@ -116,8 +112,6 @@
 
 
             #endregion
-
-
             #region LinQ syntax
 
             #region Fluet Syntax
@@ -156,6 +150,41 @@
 
 
             #endregion
+            #region LinQ Execution Ways
+
+            #region Deferred execution
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //var OddNumbers = Numbers.Where(N => N % 2 == 1);
+
+            //Numbers.AddRange(new int[] {11, 12,13,14,15 });
+
+            //foreach (var n in OddNumbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            #endregion
+
+
+            #region Immediate execution
+
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //var OddNumbers = Numbers.Where(N => N % 2 == 1).ToList();
+
+            //Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+            //foreach (var n in OddNumbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            // Casting Operators || Aggregation Operators || Elemtns Operators
+
+            #endregion
+
+            #endregion
+
 
         }
     }
