@@ -342,26 +342,61 @@ namespace ConsoleApp1
 
             #region Get product in stock and apply 10% discount
 
-            var result = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0)
-                                       .Select(p => new
-                                       {
-                                          ID = p.ProductID,
-                                          Name = p.ProductName,
-                                          OldPrice = p.UnitPrice,
-                                          NewPrice = p.UnitPrice - (p.UnitPrice * 0.1M),
-                                       });
+            //var result = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0)
+            //                           .Select(p => new
+            //                           {
+            //                              ID = p.ProductID,
+            //                              Name = p.ProductName,
+            //                              OldPrice = p.UnitPrice,
+            //                              NewPrice = p.UnitPrice - (p.UnitPrice * 0.1M),
+            //                           });
 
 
 
 
             #endregion
 
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
-            }
-            ;
 
+
+            #endregion
+            #region Element Operators
+            // Immediate execution
+            // vaild only with fluet syntax ;)
+            #region 
+
+            //var result = ListGenerator.ProductList.First();
+            ////Last()
+            //result = ListGenerator.ProductList.Last();
+            //Console.WriteLine(result);
+
+            //FirstOrDefault()
+            //var result = ListGenerator.ProductList.FirstOrDefault(p => p.UnitsInStock == 0);
+            //LastOrDefault()
+            //result = ListGenerator.ProductList.LastOrDefault();
+            //===================================================
+            //===================================================
+
+            //elementAt() || ElementAtOrDefault()
+
+            //var result = ListGenerator.ProductList.ElementAt(5);
+            //var result = ListGenerator.ProductList.ElementAtOrDefault(200);
+
+
+            //===================================================
+            //===================================================
+            //Single() || SingleOrDefault()
+            //var result = ListGenerator.ProductList.Single(); // will trhw exception if more than one element in the list
+                                                               // but we can add condtion to avoid this like (p => p.ProductID == 10)
+            //var result = ListGenerator.ProductList.SingleOrDefault(p => p.ProductID == 1000);
+
+            //Console.WriteLine(result);
+            #endregion
+
+
+
+
+            //foreach (var item in result)
+            //    Console.WriteLine(item);
             #endregion
         }
     }
