@@ -103,20 +103,59 @@
 
             // LinQ Operators dived into 13 categories
 
-            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            // Odd Numbers Number %2 == 1
-            // Where()
+            //// Odd Numbers Number %2 == 1
+            //// Where()
 
-            List<int> OddNumbers = Numbers.Where(N => N % 2 == 0).ToList();
-            
-            foreach (var item in OddNumbers)
-                Console.WriteLine(item);
+            //List<int> OddNumbers = Numbers.Where(N => N % 2 == 0).ToList();
+
+            //foreach (var item in OddNumbers)
+            //    Console.WriteLine(item);
 
 
 
             #endregion
 
+
+            #region LinQ syntax
+
+            #region Fluet Syntax
+
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //// 1. call linq operator as static method 
+            //List<int> OddNumbers = Enumerable.Where(Numbers, N => N % 2 == 0).ToList();
+            //foreach (int n in OddNumbers)
+            //    Console.WriteLine(n);
+            //Console.WriteLine("==================================");
+
+            //// 2. call linq operator as extention method 
+            //var EvenNumbers = Numbers.Where(N => N % 2 == 0).ToList();
+            //foreach (int n in EvenNumbers)
+            //    Console.WriteLine(n);
+            //Console.WriteLine("==================================");
+
+            #endregion
+
+            #region Query Syntax
+
+            // From => where => Select
+            // Must start with keyword From
+            // must end with keyword Select or 'GroupBy'
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var EvenNumbers = (from N in Numbers
+            //                         where N % 2 == 0
+            //                         select N);
+
+            //foreach (int n in EvenNumbers)
+            //    Console.WriteLine(n);
+
+            // Works only on sql server provider
+            #endregion
+
+
+            #endregion
 
         }
     }
