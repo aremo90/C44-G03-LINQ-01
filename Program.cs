@@ -279,23 +279,90 @@ namespace ConsoleApp1
             #region Get products order by Price Asc And number of Items in stock
 
 
-            var result = ListGenerator.ProductList.OrderBy(p => p.UnitPrice).ThenBy(p => p.UnitsInStock);
+            //var result = ListGenerator.ProductList.OrderBy(p => p.UnitPrice).ThenBy(p => p.UnitsInStock);
 
 
-            // Query Syntax
-            result = from P in ListGenerator.ProductList
-                     orderby P.UnitPrice , P.UnitsInStock
-                     select P;
+            //// Query Syntax
+            //result = from P in ListGenerator.ProductList
+            //         orderby P.UnitPrice , P.UnitsInStock
+            //         select P;
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #endregion
+            #region Transformation Operators
+
+            #region Get Product name
+
+            //var result = ListGenerator.ProductList.Select(p => p.ProductName);
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region get Customer name
+
+            //var result = ListGenerator.CustomerList.Select(c => c.CustomerName);
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //};
+
+
+            #endregion
+
+            #region get cusomer order => select many
+
+            //var result = ListGenerator.CustomerList.SelectMany(c => c.Orders);
+
+            //var result2 = from c in ListGenerator.CustomerList
+            //              from o in c.Orders
+            //              select o;
+
+            #endregion
+
+            #region Get Product Name and Product ID
+
+            //var result = ListGenerator.ProductList.Select(p => p.ProductID + " -- " + p.ProductName); // is this right as performance ?
+
+            //result = from p in ListGenerator.ProductList
+            //         select p.ProductID + " -- " + p.ProductName;
+
+            #endregion
+
+            #region Get product in stock and apply 10% discount
+
+            var result = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0)
+                                       .Select(p => new
+                                       {
+                                          ID = p.ProductID,
+                                          Name = p.ProductName,
+                                          OldPrice = p.UnitPrice,
+                                          NewPrice = p.UnitPrice - (p.UnitPrice * 0.1M),
+                                       });
+
+
+
+
+            #endregion
 
             foreach (var item in result)
             {
                 Console.WriteLine(item);
             }
+            ;
 
             #endregion
-
-            #endregion
-
         }
     }
 }
