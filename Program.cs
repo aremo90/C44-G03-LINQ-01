@@ -35,11 +35,22 @@
             //age = null; // vaild will trow exception at run time if we try to access it
             //age = 10.5; // vaild
 
-            Console.WriteLine(age);
+            //Console.WriteLine(age);
             #endregion
             #endregion
 
+            #region extenition method
 
+            // Method Revese number 
+
+            int x = 1234567;
+
+            //Console.WriteLine(intgerExtention.Revese(x));
+
+            int y = x.Revese(); // Extention method
+            Console.WriteLine(y);
+
+            #endregion
         }
     }
 }
