@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp1
+﻿using ConsoleApp1.Data;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
@@ -184,7 +186,12 @@
             #endregion
 
             #endregion
+            #region Data Setup
 
+            Console.WriteLine(ListGenerator.ProductList[0]);
+            Console.WriteLine(ListGenerator.CustomerList[0]);
+
+            #endregion
 
         }
     }
